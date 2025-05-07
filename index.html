@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
-    <script src="Dreamhouse.js"></script>
+    <script src="script.js"></script>
+    <script src="newscript.js"></script>
     <script src="authentication.js"></script>
     <script>
         // This runs when Salesforce redirects back with access_token
@@ -88,63 +89,116 @@
                 <div class="hero-content">
                     <h1>Find Your Dream Home Today</h1>
                     <p>Discover the perfect property from our extensive collection of luxury homes</p>
-                    
-                    <div class="search-box">
-                        <form>
-                            <div class="search-tabs">
-                                <button type="button" class="active">Buy</button>
-                                <button type="button">Rent</button>
-                                <button type="button">Projects</button>
-                            </div>
-                            <!-- Add this inside your hero section -->
-<div class="search-box">
-    <form id="propertySearchForm">
-        <div class="search-tabs">
-            <button type="button" class="search-tab active" data-type="buy">Buy</button>
-            <button type="button" class="search-tab" data-type="rent">Rent</button>
-            <button type="button" class="search-tab" data-type="projects">Projects</button>
-        </div>
-        <div class="search-fields">
-            <div class="search-field">
-                <select id="searchLocation" class="search-select">
-                    <option value="">All Locations</option>
-                    <option value="new york">New York</option>
-                    <option value="los angeles">Los Angeles</option>
-                    <option value="miami">Miami</option>
-                    <option value="chicago">Chicago</option>
-                </select>
-            </div>
-            <div class="search-field">
-                <select id="propertyType" class="search-select">
-                    <option value="">All Types</option>
-                    <option value="apartment">Apartment</option>
-                    <option value="villa">Villa</option>
-                    <option value="condo">Condo</option>
-                    <option value="townhouse">Townhouse</option>
-                </select>
-            </div>
-            <div class="search-field">
-                <select id="bedrooms" class="search-select">
-                    <option value="">Any Beds</option>
-                    <option value="1">1+ Bed</option>
-                    <option value="2">2+ Beds</option>
-                    <option value="3">3+ Beds</option>
-                    <option value="4">4+ Beds</option>
-                </select>
-            </div>
-            <button type="submit" class="search-btn">Search</button>
-        </div>
-    </form>
-</div>
-                            <div class="search-fields">
-                                <div class="search-field">
-                                    <input type="text" placeholder="Search by location, project or landmark">
-                                    <i class="fas fa-search"></i>
-                                </div>
-                                <button type="submit" class="search-btn">Search</button>
-                            </div>
-                        </form>
+                    <!-- Search Section -->
+<section class="search-section">
+    <div class="container">
+        <div class="search-box">
+            <h2>Find Your Dream Home</h2>
+            <form id="propertySearchForm">
+                <div class="search-row">
+                    <div class="search-group">
+                        <label for="searchLocation">Location</label>
+                        <select id="searchLocation">
+                            <option value="">Any Location</option>
+                            <option value="new york">New York</option>
+                            <option value="los angeles">Los Angeles</option>
+                            <option value="miami">Miami</option>
+                            <option value="chicago">Chicago</option>
+                        </select>
                     </div>
+                    
+                    <div class="search-group">
+                        <label for="propertyType">Property Type</label>
+                        <select id="propertyType">
+                            <option value="">Any Type</option>
+                            <option value="house">House</option>
+                            <option value="apartment">Apartment</option>
+                            <option value="condo">Condo</option>
+                            <option value="villa">Villa</option>
+                        </select>
+                    </div>
+                    
+                    <div class="search-group">
+                        <label for="bedrooms">Bedrooms</label>
+                        <select id="bedrooms">
+                            <option value="">Any</option>
+                            <option value="1">1+</option>
+                            <option value="2">2+</option>
+                            <option value="3">3+</option>
+                            <option value="4">4+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="search-group">
+                        <label for="priceRange">Price Range</label>
+                        <select id="priceRange">
+                            <option value="">Any Price</option>
+                            <option value="0-500000">Under $500K</option>
+                            <option value="500000-1000000">$500K - $1M</option>
+                            <option value="1000000-2000000">$1M - $2M</option>
+                            <option value="2000000">$2M+</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="search-btn">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+                
+                <div class="advanced-search-toggle">Advanced Search Options</div>
+                
+                <div class="advanced-search-options">
+                    <div class="search-group">
+                        <label for="bathrooms">Bathrooms</label>
+                        <select id="bathrooms">
+                            <option value="">Any</option>
+                            <option value="1">1+</option>
+                            <option value="2">2+</option>
+                            <option value="3">3+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="search-group">
+                        <label for="squareFootage">Square Footage</label>
+                        <select id="squareFootage">
+                            <option value="">Any</option>
+                            <option value="0-1000">Under 1,000</option>
+                            <option value="1000-2000">1,000 - 2,000</option>
+                            <option value="2000-3000">2,000 - 3,000</option>
+                            <option value="3000">3,000+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="search-group features-group">
+                        <label>Features</label>
+                        <div class="features-checkboxes">
+                            <label><input type="checkbox" name="features" value="pool"> Pool</label>
+                            <label><input type="checkbox" name="features" value="garage"> Garage</label>
+                            <label><input type="checkbox" name="features" value="garden"> Garden</label>
+                            <label><input type="checkbox" name="features" value="furnished"> Furnished</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Results Section -->
+<section class="results-section">
+    <div class="container">
+        <div id="searchResults" class="properties-grid">
+            <!-- Results will be dynamically inserted here -->
+        </div>
+        
+        <div id="noResults" class="no-results" style="display: none;">
+            <img src="images/no-results.svg" alt="No results found">
+            <h3>No properties match your search</h3>
+            <p>Try adjusting your filters or search criteria</p>
+            <button id="resetSearch" class="btn-secondary">Reset Search</button>
+        </div>
+    </div>
+</section>
                 </div>
             </div>
         </div>
