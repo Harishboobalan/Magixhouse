@@ -96,6 +96,46 @@
                                 <button type="button">Rent</button>
                                 <button type="button">Projects</button>
                             </div>
+                            <!-- Add this inside your hero section -->
+<div class="search-box">
+    <form id="propertySearchForm">
+        <div class="search-tabs">
+            <button type="button" class="search-tab active" data-type="buy">Buy</button>
+            <button type="button" class="search-tab" data-type="rent">Rent</button>
+            <button type="button" class="search-tab" data-type="projects">Projects</button>
+        </div>
+        <div class="search-fields">
+            <div class="search-field">
+                <select id="searchLocation" class="search-select">
+                    <option value="">All Locations</option>
+                    <option value="new york">New York</option>
+                    <option value="los angeles">Los Angeles</option>
+                    <option value="miami">Miami</option>
+                    <option value="chicago">Chicago</option>
+                </select>
+            </div>
+            <div class="search-field">
+                <select id="propertyType" class="search-select">
+                    <option value="">All Types</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="villa">Villa</option>
+                    <option value="condo">Condo</option>
+                    <option value="townhouse">Townhouse</option>
+                </select>
+            </div>
+            <div class="search-field">
+                <select id="bedrooms" class="search-select">
+                    <option value="">Any Beds</option>
+                    <option value="1">1+ Bed</option>
+                    <option value="2">2+ Beds</option>
+                    <option value="3">3+ Beds</option>
+                    <option value="4">4+ Beds</option>
+                </select>
+            </div>
+            <button type="submit" class="search-btn">Search</button>
+        </div>
+    </form>
+</div>
                             <div class="search-fields">
                                 <div class="search-field">
                                     <input type="text" placeholder="Search by location, project or landmark">

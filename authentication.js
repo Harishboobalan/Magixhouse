@@ -139,3 +139,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Uncomment to enable auth check on all pages
     // checkAuth();
 });
+
